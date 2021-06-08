@@ -1,9 +1,5 @@
 import { React, useEffect, useState } from "react";
-import { MatchDetailCard } from "../components/MatchDetailCard";
-import { MatchSmallCard } from "../components/MatchSmallCard";
-import {useParams, Link} from 'react-router-dom';
 import './HomePage.scss';
-import { PieChart } from 'react-minimal-pie-chart';
 import { TeamTile } from "../components/TeamTile";
 
 export const HomePage = () => {
@@ -28,7 +24,7 @@ export const HomePage = () => {
             </div>
             <div className="team-grid">
                 {
-                    teams.map(team => <TeamTile teamName={team.teamName}/>)
+                    teams.map(team => <TeamTile key={team.id} teamName={team.teamName}/>)
                 }
             </div>
         </div>
