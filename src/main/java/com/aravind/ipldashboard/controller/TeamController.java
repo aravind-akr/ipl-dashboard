@@ -20,10 +20,16 @@ public class TeamController {
 
     private TeamRepository teamRepository;
     private MatchRepository matchRepository;
+    private Iterable<Team> findAll;
 
     public TeamController(TeamRepository teamRepository,MatchRepository matchRepository) {
         this.teamRepository = teamRepository;
         this.matchRepository = matchRepository;
+    }
+
+    @GetMapping("/team")
+    public Iterable<Team> getAllTeams(){
+        return this.teamRepository.findAll();
     }
 
     @GetMapping("/team/{teamName}")
