@@ -35,3 +35,4 @@ build/
 
 ### React APP ###
 src/frontend/node_modules
+src/main/resources/public/
